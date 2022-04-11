@@ -1,5 +1,6 @@
 package com.example.comicapp.Comic;
 
+import com.example.comicapp.Log;
 import com.example.comicapp.User.Users;
 
 import java.util.List;
@@ -14,5 +15,6 @@ public interface ApiInterface {
     Call<List<Comic>> getComics();
     @POST("reg")
     Call<List<Users>> postReg(@Body Users users);
-
+    @GET("get-all")
+    Call<List<Users>> getListUser();
 }

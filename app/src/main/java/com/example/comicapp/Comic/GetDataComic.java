@@ -36,7 +36,7 @@ public class GetDataComic extends AppCompatActivity {
         adapter = new ComicAdapter(GetDataComic.this, list);
         recyclerView.setAdapter(adapter);
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.47:8080/api/truyen/")
+                .baseUrl("http://192.168.0.100:8080/api/truyen/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);

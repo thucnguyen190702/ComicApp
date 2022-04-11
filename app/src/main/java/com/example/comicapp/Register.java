@@ -74,8 +74,8 @@ public class Register extends AppCompatActivity {
         call.enqueue(new Callback<List<Users>>() {
             @Override
             public void onResponse(Call<List<Users>> call, Response<List<Users>> response) {
-                Toast.makeText(Register.this, "Đăng kí thành công", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Register.this,Login.class));
+//                Toast.makeText(Register.this, "Đăng kí thành công", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(Register.this,Login.class));
             }
 
             @Override
