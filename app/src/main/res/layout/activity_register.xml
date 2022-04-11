@@ -80,7 +80,7 @@
             android:padding="18dp"
             android:drawableLeft="@drawable/ic_baseline_date_range_24"
             android:drawablePadding="20dp"
-            android:inputType="textPassword"/>
+            android:inputType="text"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,6 +92,7 @@
             android:textColor="@color/white"/>
 
         <RadioGroup
+            android:id="@+id/rdog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -131,7 +132,7 @@
             android:padding="18dp"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="20dp"
-            android:inputType="textPassword"/>
+            android:inputType="text"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -146,7 +147,7 @@
             android:padding="18dp"
             android:drawableLeft="@drawable/ic_baseline_local_phone_24"
             android:drawablePadding="20dp"
-            android:inputType="textPassword"/>
+            android:inputType="text"/>
         <Button
             android:id="@+id/btn_register"
             android:layout_width="wrap_content"
@@ -159,5 +160,9 @@
             android:backgroundTint="#00BCD4"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"/>
+
+
+
     </LinearLayout>
+
 </ScrollView>

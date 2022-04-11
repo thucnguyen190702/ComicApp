@@ -1,8 +1,8 @@
 package com.example.comicapp.User;
 
 public class Users {
-    private String _id;
-    private String name;
+//    private String _id;
+    private String username;
     private String password;
     private String birth;
     private String gender;
@@ -12,9 +12,9 @@ public class Users {
     public Users() {
     }
 
-    public Users(String _id, String name, String password, String birth, String gender, String email, String phone) {
-        this._id = _id;
-        this.name = name;
+
+    public Users( String username, String password, String birth, String gender, String email, String phone) {
+        this.username = username;
         this.password = password;
         this.birth = birth;
         this.gender = gender;
@@ -22,20 +22,13 @@ public class Users {
         this.phone = phone;
     }
 
-    public String get_id() {
-        return _id;
-    }
-
-    public void set_id(String _id) {
-        this._id = _id;
-    }
 
     public String getName() {
-        return name;
+        return username;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.username = name;
     }
 
     public String getPassword() {
