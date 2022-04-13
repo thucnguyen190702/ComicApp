@@ -32,10 +32,25 @@
             android:background="#30ffffff"
             android:drawableLeft="@drawable/ic_baseline_person_24"
             android:drawablePadding="20dp"
-            android:hint="Tên đăng nhập (*)"
+            android:hint="Họ và Tên"
             android:padding="18dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ed_email"
+            android:background="#30ffffff"
+            android:hint="Email"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:padding="18dp"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawablePadding="20dp"
+            android:inputType="text"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,88 +81,8 @@
             android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
             android:drawablePadding="20dp"
             android:inputType="textPassword"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ed_birth"
-            android:background="#30ffffff"
-            android:hint="Ngày sinh"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:padding="18dp"
-            android:drawableLeft="@drawable/ic_baseline_date_range_24"
-            android:drawablePadding="20dp"
-            android:inputType="text"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gender"
-            android:textSize="25sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="15dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
 
-        <RadioGroup
-            android:id="@+id/rdog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
 
-            >
-
-                <RadioButton
-                    android:id="@+id/rdo_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Female"
-                    android:textColor="@color/white"
-                    android:textSize="17sp"/>
-                <RadioButton
-                    android:id="@+id/rdo_male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Male"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="20dp"
-                    android:textSize="17sp"/>
-
-        </RadioGroup>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ed_email"
-            android:background="#30ffffff"
-            android:hint="Email"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:padding="18dp"
-            android:drawableLeft="@drawable/ic_baseline_email_24"
-            android:drawablePadding="20dp"
-            android:inputType="text"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ed_phone"
-            android:background="#30ffffff"
-            android:hint="Số điện thoại"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:padding="18dp"
-            android:drawableLeft="@drawable/ic_baseline_local_phone_24"
-            android:drawablePadding="20dp"
-            android:inputType="text"/>
         <Button
             android:id="@+id/btn_register"
             android:layout_width="wrap_content"

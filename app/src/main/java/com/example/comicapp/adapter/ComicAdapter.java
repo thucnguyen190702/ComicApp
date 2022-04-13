@@ -2,6 +2,7 @@ package com.example.comicapp.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.comicapp.Comic.Comic;
+import com.example.comicapp.Comic.DetailComic;
 import com.example.comicapp.R;
 
 import java.util.List;
@@ -42,13 +44,20 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.AdapterViewH
         }
         Glide.with(holder.img_avatar.getContext()).load(comics.getImage()).into(holder.img_avatar);
         holder.txt_name.setText(comics.getName());
-//        holder.cardViewData.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String id = comics.get_id();
-//                Intent intent = new Intent(context,)
-//            }
-//        });
+        holder.cardViewData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, DetailComic.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("name",comics.getName());
+                bundle.putString("author",comics.getAuthor());
+                bundle.putString("category",comics.getCategory());
+                bundle.putString("image",comics.getImage());
+                bundle.putString("content",comics.getContent());
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

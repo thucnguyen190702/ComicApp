@@ -24,36 +24,36 @@ public class GetDataComic extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        RecyclerView recyclerView;
-        List<Comic> list;
-        ComicAdapter adapter;
+//        RecyclerView recyclerView;
+//        List<Comic> list;
+//        ComicAdapter adapter;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_data_comic);
-        recyclerView = findViewById(R.id.recycleview);
-        list = new ArrayList<>();
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter = new ComicAdapter(GetDataComic.this, list);
-        recyclerView.setAdapter(adapter);
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.100:8080/api/truyen/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        ApiInterface apiInterface = retrofit.create(ApiInterface.class);
-        Call<List<Comic>> call = apiInterface.getComics();
-        call.enqueue(new Callback<List<Comic>>() {
-            @Override
-            public void onResponse(Call<List<Comic>> call, Response<List<Comic>> response) {
-                if (response.isSuccessful() && response.body() != null){
-                    list.addAll(response.body());
-                    adapter.notifyDataSetChanged();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Comic>> call, Throwable t) {
-                Toast.makeText(GetDataComic.this, "Loi api", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        recyclerView = findViewById(R.id.recycleview);
+//        list = new ArrayList<>();
+//        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
+//        recyclerView.setLayoutManager(layoutManager);
+//        adapter = new ComicAdapter(GetDataComic.this, list);
+//        recyclerView.setAdapter(adapter);
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("http://192.168.0.100:8080/apiComic/truyen/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        ApiInterface apiInterface = retrofit.create(ApiInterface.class);
+//        Call<List<Comic>> call = apiInterface.getComics();
+//        call.enqueue(new Callback<List<Comic>>() {
+//            @Override
+//            public void onResponse(Call<List<Comic>> call, Response<List<Comic>> response) {
+//                if (response.isSuccessful() && response.body() != null){
+//                    list.addAll(response.body());
+//                    adapter.notifyDataSetChanged();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Comic>> call, Throwable t) {
+//                Toast.makeText(GetDataComic.this, "Loi api", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }
