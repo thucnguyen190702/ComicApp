@@ -58,23 +58,23 @@ public class Register extends AppCompatActivity {
 
     private void postData(String username,String password,String email){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.9:8080/apiUser/user/")
+                .baseUrl("http://192.168.0.103:8080/apiUser/user/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
 
         Users users = new Users(username,password,email);
 
-        Call<Users> call = apiInterface.postReg(users);
+        Call<List<Users>> call = apiInterface.postReg(users);
 
-        call.enqueue(new Callback<Users>() {
+        call.enqueue(new Callback<List<Users>>() {
             @Override
-            public void onResponse(Call<Users> call, Response<Users> response) {
+            public void onResponse(Call<List<Users>> call, Response<List<Users>> response) {
                 startActivity(new Intent(Register.this,Login.class));
             }
 
             @Override
-            public void onFailure(Call<Users> call, Throwable t) {
+            public void onFailure(Call<List<Users>> call, Throwable t) {
                 Toast.makeText(Register.this, "Register Failed!", Toast.LENGTH_SHORT).show();
             }
         });

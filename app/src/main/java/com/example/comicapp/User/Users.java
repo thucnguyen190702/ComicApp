@@ -5,7 +5,6 @@ public class Users {
     private String username;
     private String email;
     private String password;
-
     private String token;
 
 
@@ -21,7 +20,6 @@ public class Users {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.token = token;
     }
 
     public String getUsername() {

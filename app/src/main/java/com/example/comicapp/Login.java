@@ -45,6 +45,7 @@ public class Login extends AppCompatActivity {
                 if (ed_user.getText().toString().trim().isEmpty() &&
                         ed_password.getText().toString().trim().isEmpty()) {
                     Toast.makeText(Login.this, "Please enter all values", Toast.LENGTH_SHORT).show();
+                    return;
                 } else {
                     postLogin(ed_user.getText().toString(), ed_password.getText().toString());
                 }
@@ -53,7 +54,7 @@ public class Login extends AppCompatActivity {
     }
     void postLogin(String email, String password) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.9:8080/apiUser/user/")
+                .baseUrl("http://192.168.0.103:8080/apiUser/user/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
@@ -65,6 +66,14 @@ public class Login extends AppCompatActivity {
                 try {
                     Users userApi = response.body();
                     token = userApi.getToken();
+//                    String name = userApi.getUsername();
+//                    String email = userApi.getEmail();
+//                    Intent intent = new Intent(Login.this,MainActivity.class);
+//                    Bundle bundle = new Bundle();
+//                    bundle.getString("name",name);
+//                    bundle.getString("email",email);
+//                    intent.putExtras(bundle);
+//                    startActivity(intent);
                     if (token != null) {
                         startActivity(new Intent(Login.this, MainActivity.class));
                     } else {
