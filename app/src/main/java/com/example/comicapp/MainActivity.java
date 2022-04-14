@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.comicapp.Comic.GetDataComic;
 import com.example.comicapp.Comic.Home;
 import com.example.comicapp.User.ProfileUser;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

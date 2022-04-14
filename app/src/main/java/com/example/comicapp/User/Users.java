@@ -3,25 +3,33 @@ package com.example.comicapp.User;
 public class Users {
 //    private String _id;
     private String username;
-    private String password;
     private String email;
+    private String password;
+
+    private String token;
 
 
     public Users() {
     }
 
-    public Users(String username, String password, String email) {
-        this.username = username;
+    public Users(String email,String password ) {
         this.password = password;
         this.email = email;
     }
 
-    public String getName() {
+    public Users(String username,String email, String password ) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.token = token;
+    }
+
+    public String getUsername() {
         return username;
     }
 
-    public void setName(String name) {
-        this.username = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -40,5 +48,11 @@ public class Users {
         this.email = email;
     }
 
+    public String getToken() {
+        return token;
+    }
 
+    public void setToken(String token) {
+        this.token = token;
+    }
 }

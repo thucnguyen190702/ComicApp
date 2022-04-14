@@ -36,7 +36,7 @@ public class Home extends Fragment {
         adapter = new ComicAdapter(getContext(), list);
         recyclerView.setAdapter(adapter);
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.100:8080/apiComic/truyen/")
+                .baseUrl("http://192.168.1.9:8080/apiComic/truyen/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
@@ -52,7 +52,7 @@ public class Home extends Fragment {
 
             @Override
             public void onFailure(Call<List<Comic>> call, Throwable t) {
-                Toast.makeText(getContext(), "Loi api", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "Loi api", Toast.LENGTH_SHORT).show();
             }
         });
         return view;

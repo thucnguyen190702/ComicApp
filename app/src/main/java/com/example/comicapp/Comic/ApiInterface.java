@@ -14,7 +14,7 @@ public interface ApiInterface {
     @GET("get-all")
     Call<List<Comic>> getComics();
     @POST("reg")
-    Call<List<Users>> postReg(@Body Users users);
-    @GET("get-all")
-    Call<List<Users>> getListUser();
+    Call<Users> postReg(@Body Users users);
+    @POST("login")
+    Call<Users> postLogin(@Body Users users);
 }

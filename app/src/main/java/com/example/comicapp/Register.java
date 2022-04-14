@@ -45,33 +45,37 @@ public class Register extends AppCompatActivity {
                      ed_email.getText().toString().isEmpty() && ed_repassword.getText().toString().isEmpty()) {
                     Toast.makeText(Register.this, "Please enter all values", Toast.LENGTH_SHORT).show();
                     return;
+                }else {
+                    postData(ed_username.getText().toString(),ed_password.getText().toString(),
+                            ed_email.getText().toString());
+
                 }
                 Log.e("TAG", "onClick: " + ed_username.getText().toString() );
-                postData(ed_username.getText().toString(),ed_password.getText().toString(),
-                        ed_email.getText().toString());
+
             }
         });
     }
 
     private void postData(String username,String password,String email){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.100:8080/apiUser/user/")
+                .baseUrl("http://192.168.1.9:8080/apiUser/user/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
 
         Users users = new Users(username,password,email);
 
-        Call<List<Users>> call = apiInterface.postReg(users);
+        Call<Users> call = apiInterface.postReg(users);
 
-        call.enqueue(new Callback<List<Users>>() {
+        call.enqueue(new Callback<Users>() {
             @Override
-            public void onResponse(Call<List<Users>> call, Response<List<Users>> response) {
+            public void onResponse(Call<Users> call, Response<Users> response) {
+                startActivity(new Intent(Register.this,Login.class));
             }
 
             @Override
-            public void onFailure(Call<List<Users>> call, Throwable t) {
-
+            public void onFailure(Call<Users> call, Throwable t) {
+                Toast.makeText(Register.this, "Register Failed!", Toast.LENGTH_SHORT).show();
             }
         });
     }
