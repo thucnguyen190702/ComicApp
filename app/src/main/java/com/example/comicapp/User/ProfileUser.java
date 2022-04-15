@@ -19,14 +19,18 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProfileUser extends Fragment {
-//    TextView txt_name,txt_email;
-//    Button btn_logout;
+    TextView txt_name,txt_email;
+    Button btn_logout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_profile,container,false);
 //        txt_name = view.findViewById(R.id.txt_name);
 //        txt_email = view.findViewById(R.id.txt_email);
 //        btn_logout = view.findViewById(R.id.btn_logout);
+//        String name = getArguments().getString("name");
+//        String email = getArguments().getString("email");
+//        txt_name.setText(name);
+//        txt_email.setText(email);
 //        Retrofit retrofit = new Retrofit.Builder()
 //                .baseUrl("http://192.168.0.103:8080/apiUser/user/")
 //                .addConverterFactory(GsonConverterFactory.create())

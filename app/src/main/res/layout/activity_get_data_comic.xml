@@ -5,7 +5,6 @@
     android:id="@+id/recycleview"
     android:layout_margin="8dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Comic.GetDataComic">
+    android:layout_height="match_parent">
 
 </androidx.recyclerview.widget.RecyclerView>

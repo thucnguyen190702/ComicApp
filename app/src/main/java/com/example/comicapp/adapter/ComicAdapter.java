@@ -3,6 +3,7 @@ package com.example.comicapp.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,8 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.AdapterViewH
                 bundle.putString("category",comics.getCategory());
                 bundle.putString("image",comics.getImage());
                 bundle.putString("content",comics.getContent());
+                bundle.putStringArray("imagecontent",comics.getImagecontent());
+                Log.e("TAG", "onClick: "+  comics.getImagecontent());
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }

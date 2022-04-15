@@ -9,19 +9,27 @@ public class Comic {
     private String category;
     private String image;
     private String content;
-//    private Array imagecontent;
+    private String[] imagecontent;
 
     public Comic() {
     }
 
-    public Comic(String _id,String name, String author, String category, String image, String content) {
+    public Comic(String _id, String name, String author, String category, String image, String content, String[] imagecontent) {
         this._id = _id;
         this.name = name;
         this.author = author;
         this.category = category;
         this.image = image;
         this.content = content;
+        this.imagecontent = imagecontent;
+    }
 
+    public Comic(String name, String author, String category, String image, String content) {
+        this.name = name;
+        this.author = author;
+        this.category = category;
+        this.image = image;
+        this.content = content;
     }
 
     public String get_id() {
@@ -72,5 +80,12 @@ public class Comic {
         this.content = content;
     }
 
+    public String[] getImagecontent() {
+        return imagecontent;
+    }
+
+    public void setImagecontent(String[] imagecontent) {
+        this.imagecontent = imagecontent;
+    }
 
 }

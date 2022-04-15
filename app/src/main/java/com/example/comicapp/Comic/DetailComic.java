@@ -20,6 +20,7 @@ public class DetailComic extends AppCompatActivity {
         namecomic = findViewById(R.id.namecomic);
         category = findViewById(R.id.category);
         author = findViewById(R.id.author);
+//        image_content = findViewById(R.id.image_content);
         content = findViewById(R.id.content);
         imageView = findViewById(R.id.img_detail_avatar);
         Intent intent = getIntent();
@@ -32,6 +33,10 @@ public class DetailComic extends AppCompatActivity {
             String img = bundle.getString("image");
             Glide.with(imageView.getContext()).load(img).into(imageView);
             content.setText(bundle.getString("content"));
+//            String[] image = bundle.getStringArray("imagecontent");
+//            for (int i = 0; i <image.length ; i++) {
+//                Glide.with(image_content.getContext()).load(image[i]).into(image_content);
+//            }
         }
     }
 }

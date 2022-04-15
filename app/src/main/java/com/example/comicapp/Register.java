@@ -58,7 +58,7 @@ public class Register extends AppCompatActivity {
 
     private void postData(String username,String password,String email){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.103:8080/apiUser/user/")
+                .baseUrl("http://192.168.43.47:8080/apiUser/user/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.comicapp.Comic.ApiInterface;
+import com.example.comicapp.User.ProfileUser;
 import com.example.comicapp.User.Users;
 
 import retrofit2.Call;
@@ -54,7 +55,7 @@ public class Login extends AppCompatActivity {
     }
     void postLogin(String email, String password) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.103:8080/apiUser/user/")
+                .baseUrl("http://192.168.43.47:8080/apiUser/user/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
@@ -66,14 +67,6 @@ public class Login extends AppCompatActivity {
                 try {
                     Users userApi = response.body();
                     token = userApi.getToken();
-//                    String name = userApi.getUsername();
-//                    String email = userApi.getEmail();
-//                    Intent intent = new Intent(Login.this,MainActivity.class);
-//                    Bundle bundle = new Bundle();
-//                    bundle.getString("name",name);
-//                    bundle.getString("email",email);
-//                    intent.putExtras(bundle);
-//                    startActivity(intent);
                     if (token != null) {
                         startActivity(new Intent(Login.this, MainActivity.class));
                     } else {

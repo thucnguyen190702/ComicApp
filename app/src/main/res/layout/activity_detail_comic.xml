@@ -59,5 +59,9 @@
         android:layout_margin="16dp"
         android:textSize="18sp"
         android:textColor="@color/black"/>
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/image_content"/>-->
 </LinearLayout>
 </ScrollView>
