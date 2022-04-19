@@ -48,7 +48,7 @@
         android:drawablePadding="20dp"
         android:inputType="textPassword"/>
     <CheckBox
-        android:id="@+id/chk_reLogin"
+        android:id="@+id/chk_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lưu thông tin"

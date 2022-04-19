@@ -3,9 +3,11 @@ package com.example.comicapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +24,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Login extends AppCompatActivity {
     TextView moveRegister, ed_password, ed_user;
     Button btn_login;
-
+    SharedPreferences preferences;
+    CheckBox chk_Login;
     String token = null;
 
     @Override
@@ -33,6 +36,11 @@ public class Login extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         ed_password = findViewById(R.id.ed_password);
         ed_user = findViewById(R.id.ed_user);
+        chk_Login = findViewById(R.id.chk_Login);
+        preferences =getSharedPreferences("rememberLogin",MODE_PRIVATE);
+        ed_user.setText(preferences.getString("email",""));
+        ed_password.setText(preferences.getString("password",""));
+        chk_Login.setChecked(preferences.getBoolean("checked",false));
         moveRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,9 +57,22 @@ public class Login extends AppCompatActivity {
                     return;
                 } else {
                     postLogin(ed_user.getText().toString(), ed_password.getText().toString());
+                    rememberUser(ed_user.getText().toString(),ed_password.getText().toString(),chk_Login.isChecked());
                 }
             }
         });
+    }
+    private void rememberUser(String email ,String password,boolean checked) {
+        SharedPreferences preferences = getSharedPreferences("rememberLogin",MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        if (!checked){
+            editor.clear();
+        }else {
+            editor.putString("email",email);
+            editor.putString("password",password);
+            editor.putBoolean("checked",checked);
+        }
+        editor.commit();
     }
     void postLogin(String email, String password) {
         Retrofit retrofit = new Retrofit.Builder()

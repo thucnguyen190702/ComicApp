@@ -8,11 +8,11 @@
         android:id="@+id/profile_image"
         android:layout_width="170dp"
         android:layout_height="170dp"
-        android:src="@drawable/tsc"
+        android:src="@drawable/person"
         android:layout_gravity="center"
         android:layout_marginTop="35dp"
         app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"/>
+        app:civ_border_color="@color/white"/>
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="match_parent"

@@ -1,6 +1,5 @@
 package com.example.comicapp.Comic;
 
-import com.example.comicapp.Log;
 import com.example.comicapp.User.Users;
 
 import java.util.List;
