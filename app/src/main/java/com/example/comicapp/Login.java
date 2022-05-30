@@ -76,7 +76,7 @@ public class Login extends AppCompatActivity {
     }
     void postLogin(String email, String password) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.47:8080/apiUser/user/")
+                .baseUrl("http://192.168.0.102:8080/apiUser/user/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
